@@ -1,0 +1,19 @@
+version: '3.6'  
+services:  
+  wikipedia:
+    build:
+      context: ./wikipedia
+    container_name: wikimongo
+    environment:
+      - MONGO_HOST=database
+    depends_on:
+      - database
+  database:
+    image: mongo
+    container_name: wiki_mongo
+    environment:
+      - MONGO_INITDB_DATABASE=wikipedia
+    volumes:
+      - ./mongodata:/data/db
+    ports:
+      - '27023-27023:27023-27023'

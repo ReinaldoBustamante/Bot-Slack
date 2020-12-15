@@ -2,7 +2,7 @@ FROM python:3.6.3
 
 ENV MONGO_HOST localhost
 ENV MONGO_PORT 27017
-ENV SLACK_TOKEN="ingrese token"
+ENV SLACK_TOKEN="TOKEN"
 
 COPY ./requirements.txt /requirements.txt
 
