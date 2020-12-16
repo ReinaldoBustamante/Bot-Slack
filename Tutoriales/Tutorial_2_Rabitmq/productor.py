@@ -13,10 +13,12 @@ channel = connection.channel()
 channel.queue_declare(queue='wikipedia')
 channel.queue_declare(queue='youtube')
 
-#Publicación del mensaje
+#Publicación del mensaje en el consumidor wikipedia
 channel.basic_publish(exchange='',
                       routing_key='wikipedia',
                       body=message)
+
+#Publicación del mensaje en el consumidor youtube
 channel.basic_publish(exchange='',
                       routing_key='youtube',
                       body=message)
