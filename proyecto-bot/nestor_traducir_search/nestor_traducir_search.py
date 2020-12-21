@@ -2,22 +2,10 @@
 import pika
 import time
 import os
-import transformers
-from transformers import pipeline
-from transformers import AutoModelWithLMHead, AutoTokenizer, MarianTokenizer, MarianMTModel
+from textblob import TextBlob
 
-########### CONFIGURACION MODELO DE TRADUCCION AUTOMATICA ##########
+time.sleep(30)
 
-
-model_name = "Helsinki-NLP/opus-mt-es-en"
-
-tokenizer = MarianTokenizer.from_pretrained(model_name)
-
-model = MarianMTModel.from_pretrained(model_name)
-
-###################################################################
-
-#time.sleep(10)
 
 ########### CONNEXIÓN A RABBIT MQ #######################
 HOST = os.environ['RABBITMQ_HOST']
@@ -42,23 +30,19 @@ channel.queue_bind(exchange='nestor', queue=queue_name, routing_key="traducir")
 
 ########## ESPERA Y HACE UN BUSQUEDA WIKIPEDIA CUANDO RECIBE UN MENSAJE ####
 
-print(' Nestor_Translate_Es_En Waiting for messages...')
+print(' [*] Waiting for messages. To exit press CTRL+C')
 
 
 def callback(ch, method, properties, body):
-    query = body.decode()
-    if query.startswith("[traducir]") and len(str(body))<300:
-        query = query[10:]
+    print(body)
+    if str(body).startswith("b'[traducir]"):
+        query = str(body)[13:-1]
         print(query)
-        to_translate = [query]
-
-        translated = model.generate(**tokenizer.prepare_translation_batch(to_translate))
-        result = [tokenizer.decode(t, skip_special_tokens=True) for t in translated]
-
-        print(result[0])
-
+        result=TextBlob(query)
+        print(result.translate(to='en'))
+        a = result.translate(to='en')
         ########## PUBLICA EL RESULTADO COMO EVENTO EN RABBITMQ ##########
-        channel.basic_publish(exchange='nestor', routing_key="publicar_slack", body="traducción es->en:"+str(result[0]))
+        channel.basic_publish(exchange='nestor', routing_key="publicar_slack", body="Traduccion de '"+query+"': al ingles es -> "+str(a))
 
 
 channel.basic_consume(

@@ -4,13 +4,24 @@ services:
    image: rabbitmq:3-management
    ports:
       # The standard AMQP protocol port
-      - '5673:5673'
+      - '5674:5674'
       # HTTP management UI
-      - '15673:15673'
+      - '15674:15674'
    networks:
       - network
    container_name: rabbitmq
    restart: 'always'
+
+  database:
+   image: mongo
+   container_name: nestor_mongo
+   environment:
+      - MONGO_INITDB_DATABASE=nestor
+   volumes:
+      - ./mongodata:/data/db
+   ports:
+      - '27020-27020:27020-27020'
+      
 
   nestor_wikipedia_search:
    build:
@@ -22,11 +33,22 @@ services:
       - RABBITMQ_HOST=rabbitmq
    depends_on:
       - rabbitmq
-
-  nestor_slack_reader_2:
+   
+  nestor_traducir_search:
    build:
-     context: ./nestor_slack_reader_2
-   container_name: nestor_slack_reader_2
+      context: ./nestor_traducir_search
+   container_name: nestor_traducir_search
+   networks:
+      - network
+   environment:
+      - RABBITMQ_HOST=rabbitmq
+   depends_on:
+      - rabbitmq
+  
+  nestor_slack_reader:
+   build:
+     context: ./nestor_slack_reader
+   container_name: nestor_slack_reader
    environment:
       - RABBITMQ_HOST=rabbitmq
    depends_on:
@@ -47,5 +69,15 @@ services:
    networks:
       - network
 
+  nestor_almacena_mensaje:
+   build:
+      context: ./nestor_almacena_mensaje
+   container_name: nestor_almacena_mensaje
+   networks:
+      - network
+   environment:
+      - RABBITMQ_HOST=rabbitmq
+   depends_on:
+      - rabbitmq
 networks:
   network: {}

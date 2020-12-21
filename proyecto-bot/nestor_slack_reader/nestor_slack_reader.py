@@ -10,7 +10,7 @@ from slack import WebClient
 
 time.sleep(30)
 
-############ CONEXION RABBITMQ ##############x
+############ CONEXION RABBITMQ ##############
 
 HOST = os.environ['RABBITMQ_HOST']
 
@@ -53,12 +53,14 @@ def message(payload):
     text = event.get("text")
 
     
+    if text.startswith("[traducir]"):
+        channel.basic_publish(exchange='nestor', routing_key="traducir", body=text)
+
     if text.startswith("[wikipedia]"):
         channel.basic_publish(exchange='nestor', routing_key="wikipedia", body=text)
 
-    if text.startswith("[link]"):
-        channel.basic_publish(exchange='nestor', routing_key="link", body=text)
- 
+    if text.startswith("[guardar]"):
+        channel.basic_publish(exchange='nestor', routing_key="guardar", body=text)
 
 if __name__ == "__main__":
     # Create the logging object
