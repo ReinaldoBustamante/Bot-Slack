@@ -1,5 +1,17 @@
 version: '3.6'  
 services:
+
+  mongodbs:
+   image: mongo:latest
+   ports: 
+      - 27023:27023
+   networks: 
+      - network
+   container_name: mongodb_1
+   restart: 'always'
+   volumes:
+      - ./mongodata:/data/db
+      
   rabbitmq:
    image: rabbitmq:3-management
    ports:
@@ -12,39 +24,6 @@ services:
    container_name: rabbitmq
    restart: 'always'
 
-  database:
-   image: mongo
-   container_name: nestor_mongo
-   environment:
-      - MONGO_INITDB_DATABASE=nestor
-   volumes:
-      - ./mongodata:/data/db
-   ports:
-      - '27020-27020:27020-27020'
-      
-
-  nestor_wikipedia_search:
-   build:
-      context: ./nestor_wikipedia_search
-   container_name: nestor_wikipedia_search
-   networks:
-      - network
-   environment:
-      - RABBITMQ_HOST=rabbitmq
-   depends_on:
-      - rabbitmq
-   
-  nestor_traducir_search:
-   build:
-      context: ./nestor_traducir_search
-   container_name: nestor_traducir_search
-   networks:
-      - network
-   environment:
-      - RABBITMQ_HOST=rabbitmq
-   depends_on:
-      - rabbitmq
-  
   nestor_slack_reader:
    build:
      context: ./nestor_slack_reader
@@ -69,15 +48,27 @@ services:
    networks:
       - network
 
-  nestor_almacena_mensaje:
+  nestor_almacenar:
    build:
-      context: ./nestor_almacena_mensaje
-   container_name: nestor_almacena_mensaje
+     context: ./nestor_almacenar
+   container_name: nestor_almacenar
+   environment:
+      - RABBITMQ_HOST=rabbitmq
+      - MONGO_HOST=mongodbs
+   depends_on:
+      - rabbitmq
+      - mongodbs
    networks:
       - network
+  nestor_bot_help:
+   build:
+     context: ./nestor_bot_help
+   container_name: nestor_bot_help
    environment:
       - RABBITMQ_HOST=rabbitmq
    depends_on:
       - rabbitmq
+   networks:
+      - network
 networks:
   network: {}

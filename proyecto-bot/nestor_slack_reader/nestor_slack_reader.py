@@ -53,13 +53,10 @@ def message(payload):
     text = event.get("text")
 
     
-    if text.startswith("[traducir]"):
-        channel.basic_publish(exchange='nestor', routing_key="traducir", body=text)
+    if text.startswith("[bot]"):
+        channel.basic_publish(exchange='nestor', routing_key="bot", body=text)
 
-    if text.startswith("[wikipedia]"):
-        channel.basic_publish(exchange='nestor', routing_key="wikipedia", body=text)
-
-    if text.startswith("[guardar]"):
+    if (text.startswith("[link]") or text.startswith("[aviso]") or text.startswith("[repo]") or text.startswith("[doc]") or text.startswith("[fecha]")) :
         channel.basic_publish(exchange='nestor', routing_key="guardar", body=text)
 
 if __name__ == "__main__":
