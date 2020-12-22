@@ -10,7 +10,7 @@ services:
    container_name: mongodb_1
    restart: 'always'
    volumes:
-      - ./mongodata:/data/db
+      - ./mongodata:/data/db_1
       
   rabbitmq:
    image: rabbitmq:3-management
@@ -60,6 +60,20 @@ services:
       - mongodbs
    networks:
       - network
+
+  nestor_muestra_mensajes:
+   build:
+     context: ./nestor_muestra_mensajes
+   container_name: nestor_muestra_mensajes
+   environment:
+      - RABBITMQ_HOST=rabbitmq
+      - MONGO_HOST=mongodbs
+   depends_on:
+      - rabbitmq
+      - mongodbs
+   networks:
+      - network
+
   nestor_bot_help:
    build:
      context: ./nestor_bot_help

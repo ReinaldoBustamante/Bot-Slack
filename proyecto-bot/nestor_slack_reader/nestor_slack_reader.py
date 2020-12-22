@@ -56,8 +56,13 @@ def message(payload):
     if text.startswith("[bot]"):
         channel.basic_publish(exchange='nestor', routing_key="bot", body=text)
 
-    if (text.startswith("[link]") or text.startswith("[aviso]") or text.startswith("[repo]") or text.startswith("[doc]") or text.startswith("[fecha]")) :
+    if (text.startswith("[link]") or text.startswith("[fecha]") or text.startswith('[cierre_semestre]') 
+        or text.startswith('[programa]')) :
         channel.basic_publish(exchange='nestor', routing_key="guardar", body=text)
+
+    if (text.startswith("[link*]") or text.startswith("[fecha*]") or text.startswith('[cierre_semestre*]')
+        or text.startswith('[programa*]')) :
+        channel.basic_publish(exchange='nestor', routing_key="mostrar", body=text)
 
 if __name__ == "__main__":
     # Create the logging object
