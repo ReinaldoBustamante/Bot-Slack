@@ -140,3 +140,24 @@ finalmente para eliminar se ocupa lrem
 esto eliminara el elemento 1 de la lista
 
 Para almacenar **Sets** podemos hacerlo de la siguiente manera
+~~~
+127.0.0.1:6397> sadd nombre_set "hola"
+127.0.0.1:6397> sadd nombre_set "mundo"
+~~~
+podemos consultar el set con:
+~~~
+127.0.0.1:6397> smembers nombre_set
+1) "hola"
+2) "mundo"
+~~~
+tambien podemos validar si existe un valor
+~~~
+127.0.0.1:6397> sismember nombre_set valor
+~~~
+si nos da 0 es por que no esta el valor, por otro lado si nos devuelve 1 si esta.
+Tambien podemos eliminar un valor del set
+~~~
+127.0.0.1:6397> srem nombre_set 'valor'
+~~~
+
+Ahora el punto fuerte de redis es el almacenamiento de **Hashes** este se puede realizar de la siguiente forma
