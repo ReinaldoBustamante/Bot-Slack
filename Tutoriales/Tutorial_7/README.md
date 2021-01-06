@@ -8,6 +8,7 @@ las Base de datos no relacionales o tambien llamadas NoSQL son bases de datos di
 Estas a diferencia de las bases de datos relacionales no poseen un  identificador que permita la relación entre un conjunto de datos y otros. sino la informacion se organiza normalmente mediante documentos.
 
 ### 1.3 Tipos 
-- Clave-Valor: Las bases de datos clave-valor son altamente divisibles y permiten escalado horizontal a escalas que otros tipos de bases de datos no pueden alcanzar.
-- Documentos: Las bases de datos de documentos facilitan a los desarrolladores el almacenamiento y la consulta de datos en una base de datos mediante el uso del mismo formato de modelo de documento que emplean en el código de aplicación. La naturaleza flexible, semiestructurada y jerárquica de los documentos y las bases de datos de documentos permite que evolucionen según las necesidades de las aplicaciones.
-
+- **Clave-Valor**: Las bases de datos clave-valor son altamente divisibles y permiten escalado horizontal a escalas que otros tipos de bases de datos no pueden alcanzar.
+- **Documentos**: Las bases de datos de documentos facilitan a los desarrolladores el almacenamiento y la consulta de datos en una base de datos mediante el uso del mismo formato de modelo de documento que emplean en el código de aplicación. La naturaleza flexible, semiestructurada y jerárquica de los documentos y las bases de datos de documentos permite que evolucionen según las necesidades de las aplicaciones.
+- **Graficos**: una base de datos de grafos utiliza estructuras de grafos para almacenar, correlacionar y consultar relaciones.
+- **En Memoria**: Almacena sus datos en memoria para facilitar tiempos más rápidos de respuesta. 
