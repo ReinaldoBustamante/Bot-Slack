@@ -58,3 +58,4 @@ un ejemplo de esto es
   .
   .
 ~~~
+Si nos damos cuenta, esta lista se divide en pares, siendo 1) el nombre de la configuracion y 2) su valor. dicho esto podemos editar su valor con el comando `config set 'nombre campo' 'valor nuevo' `
