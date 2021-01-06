@@ -133,3 +133,10 @@ tambien para ver lo elementos de la lista podemos ocupar el comando usado anteri
 ~~~
 127.0.0.1:6397> lrange mylist inicio fin 
 ~~~
+finalmente para eliminar se ocupa lrem
+~~~
+127.0.0.1:6397> lrem mylist 0 1
+~~~
+esto eliminara el elemento 1 de la lista
+
+Para almacenar **Sets** podemos hacerlo de la siguiente manera
