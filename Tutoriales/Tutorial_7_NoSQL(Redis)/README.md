@@ -86,7 +86,7 @@ En redis podemos almacenar diferentes tipos de datos. estos son:
 - Enteros
 - Listas
 - Hashes
-- Sets
+- Sets  
 Para almacenar **String y enteros simplemente podemos escribir lo siguiente**:
 ~~~
 set nombre_variable 'hola mundo' 
