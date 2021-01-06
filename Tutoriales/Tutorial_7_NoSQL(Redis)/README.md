@@ -1,4 +1,4 @@
-# Tutorial 7 SGBD No Relacional(Redis)
+# Tutorial 7 SGBD No Relacional (Redis)
 
 ## 1.Introducion
 ### 1.1 ¿Que son las SGBD no relacionales?
