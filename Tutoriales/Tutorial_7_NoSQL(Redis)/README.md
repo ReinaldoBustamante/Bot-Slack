@@ -92,5 +92,9 @@ Para almacenar **String y enteros simplemente podemos escribir lo siguiente**:
 set nombre_variable 'hola mundo' 
 set nombre_variable 1 
 ~~~
-La variable string se caracteriza por llevar comillas, por otro lado las variables INT no
+La variable string se caracteriza por llevar comillas, por otro lado las variables INT no.
+Para acceder los valores de las variables creadas anteriormente podemos utilizar:
+~~~
+get nombre_variable 
+~~~
 
