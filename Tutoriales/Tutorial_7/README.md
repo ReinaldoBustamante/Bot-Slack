@@ -16,3 +16,6 @@ Estas a diferencia de las bases de datos relacionales no poseen un  identificado
 Para este tutorial se ocupara la base de datos no relacional **Redis**
 
 ### 1.4 Redis
+Redis está basada en una estructura de tablas hash donde cada clave tiene un valor asociado. En comparación con otras bases de datos de tipo Clave-Valor, Redis permite el uso de estructuras más complejas y flexibles que abren una serie de posibilidades ante las distintas necesidades de aplicaciones de negocio.
+
+#### 1.4.1 Instalacion
