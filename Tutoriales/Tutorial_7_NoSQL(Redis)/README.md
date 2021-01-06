@@ -23,3 +23,17 @@ Redis está basada en una estructura de tablas hash donde cada clave tiene un va
 sudo apt-get update
 sudo apt-get install redis-server
 ~~~
+para comprobar que funciona podemos iniciar el servidor y luego mandar un ping, para ello escriba lo siguiente en su terminal
+~~~
+redis-server
+redis-cli
+~~~
+luego le aparecera algo como esto
+~~~
+127.0.0.1:6397> 
+~~~
+En esta parte debera escribir ping, recibiendo como respuesta pong
+~~~
+127.0.0.1:6397> ping 
+PONG
+~~~
