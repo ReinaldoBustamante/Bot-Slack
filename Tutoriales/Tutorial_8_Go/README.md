@@ -8,3 +8,9 @@ Para instalar go primero debemos descargar su archivo de instalacion. Para ello 
 ~~~
 curl -O https://dl.google.com/go/go1.15.6.linux-amd64.tar.gz
 ~~~
+luego haga lo siguiente:
+~~~
+sudo tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+go version
+~~~
