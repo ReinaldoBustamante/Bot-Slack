@@ -72,7 +72,11 @@ una vez creada la contraseña al intentar obtener un valor con `config get *`, n
 Como se menciono anteriormente redis almacena todos los datos en memoria principal del servidor, es decir al apagarse el servidor esta perderia la informacion almacenada. Por lo cual para lograr una persistencia de datos podemos almacenar una copia de seguridad en el disco duro. Esto se puede lograr con el siguiente comando:
 
 ~~~
-127.0.0.1:6397> save
+127.0.0.1:6397> bgsave
 ~~~
 
-Esto creara un archivo en el disco duro con el nombre de **dump.rdb**. Ademas tambien es posible programar un save automatico con `save 'tiempo' 'cantidad de cambios'`, es decir que si se han producido x cantidad de cambios en el intervalo de tiempo(Segundos), se guardara automaticamente una copia de seguridad
+Esto creara un archivo en el disco duro con el nombre de **dump.rdb**. Ademas tambien es posible programar un save automatico con `bgsave 'tiempo' 'cantidad de cambios'`, es decir que si se han producido x cantidad de cambios en el intervalo de tiempo(Segundos), se guardara automaticamente una copia de seguridad.
+
+Tambien existe el comando **save** pero no es recomendable, ya que si el sistema esta en funcionamiento este comando no permitiria a los clientes acceder a la base de datos.
+
+
