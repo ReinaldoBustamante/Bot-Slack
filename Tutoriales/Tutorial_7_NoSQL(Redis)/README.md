@@ -110,3 +110,26 @@ igualmente esto se puede utilizar para hacer las consultas
 ~~~
 mget variable1 variable2 
 ~~~
+
+Para almacenar **Listas** podemos hacerlo de 2 maneras, agregar elementos a una lista por la derecha o por la izquierda.
+~~~
+lpush mylist 1
+lpush mylist 2
+~~~
+al realizar la consulta de mylist obtenemos lo siguiente.
+~~~
+127.0.0.1:6397> lrange mylist 0 5 
+1) '2'
+2) '1'
+~~~
+note que lpush agrega valores a la lista por la izquierda ya que la posicion 1 corresponde al ultimo agregado. en cambio si quisieramos agregar por la derecha simplemente cambiamos la **l** por una **r**.
+~~~
+127.0.0.1:6397> rpush mylist 3
+1) '2'
+2) '1'
+3) '3'
+~~~
+tambien para ver lo elementos de la lista podemos ocupar el comando usado anteriormente 
+~~~
+127.0.0.1:6397> lrange mylist inicio fin 
+~~~
