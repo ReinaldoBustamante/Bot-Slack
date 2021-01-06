@@ -59,3 +59,12 @@ un ejemplo de esto es
   .
 ~~~
 Si nos damos cuenta, esta lista se divide en pares, siendo 1) el nombre de la configuracion y 2) su valor. dicho esto podemos editar su valor con el comando `config set 'nombre campo' 'valor nuevo' `
+
+Para agregar una contraseña, solo debemos configurarla con los comandos mencionados anteriormente.
+~~~
+127.0.0.1:6397> config set 'requirepass' 'password'
+~~~
+una vez creada la contraseña al intentar obtener un valor con `config get *`, nos pedira autentificarnos. lo cual lo podemos hacer de la siguiente manera.
+~~~
+127.0.0.1:6397> auth "password"
+~~~
