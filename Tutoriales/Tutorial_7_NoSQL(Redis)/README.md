@@ -97,4 +97,15 @@ Para acceder los valores de las variables creadas anteriormente podemos utilizar
 ~~~
 get nombre_variable 
 ~~~
-
+y para borrar 
+~~~
+del nombre_variable 
+~~~
+Ademas si deseamos agregar mas de 1 variable podemos hacer lo siguiente.
+~~~
+mset variable1 "valor variable1" variable2 "valor variable2" 
+~~~
+igualmente esto se puede utilizar para hacer las consultas
+~~~
+mget variable1 variable2 
+~~~
