@@ -12,3 +12,7 @@ Estas a diferencia de las bases de datos relacionales no poseen un  identificado
 - **Documentos**: Las bases de datos de documentos facilitan a los desarrolladores el almacenamiento y la consulta de datos en una base de datos mediante el uso del mismo formato de modelo de documento que emplean en el código de aplicación. La naturaleza flexible, semiestructurada y jerárquica de los documentos y las bases de datos de documentos permite que evolucionen según las necesidades de las aplicaciones.
 - **Graficos**: una base de datos de grafos utiliza estructuras de grafos para almacenar, correlacionar y consultar relaciones.
 - **En Memoria**: Almacena sus datos en memoria para facilitar tiempos más rápidos de respuesta. 
+
+Para este tutorial se ocupara la base de datos no relacional **Redis**
+
+### 1.4 Redis
