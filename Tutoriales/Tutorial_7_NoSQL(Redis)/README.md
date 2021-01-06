@@ -161,3 +161,30 @@ Tambien podemos eliminar un valor del set
 ~~~
 
 Ahora el punto fuerte de redis es el almacenamiento de **Hashes** este se puede realizar de la siguiente forma
+~~~
+hset nombre_hash_set campo1 "valor" campo2 "valor" campo3 "valor"
+~~~
+para obtener los valores de un campo en especifico.
+~~~
+hget nombre_hash_set campo
+~~~
+para obtener los valores de un campo en especifico.
+~~~
+hgetall nombre_hash_set
+~~~
+para obtener solo los valores de todos los campos
+~~~
+hvals nombre_hash_set
+~~~
+para ver las keys del hash
+~~~
+hkeys nombre_hash_set
+~~~
+Para eliminar un campo
+~~~
+hdel nombre_hash_set campo
+~~~
+para eliminar el hash
+~~~
+del nombre_hash_set 
+~~~
