@@ -69,3 +69,10 @@ una vez creada la contraseña al intentar obtener un valor con `config get *`, n
 127.0.0.1:6397> auth "password"
 ~~~
 #### 1.4.3 Persistencia de datos
+Como se menciono anteriormente redis almacena todos los datos en memoria principal del servidor, es decir al apagarse el servidor esta perderia la informacion almacenada. Por lo cual para lograr una persistencia de datos podemos almacenar una copia de seguridad en el disco duro. Esto se puede lograr con el siguiente comando:
+
+~~~
+127.0.0.1:6397> save
+~~~
+
+Esto creara un archivo en el disco duro con el nombre de **dump.rdb**. Ademas tambien es posible programar un save automatico con `save 'tiempo' 'cantidad de cambios'`, es decir que si se han producido x cantidad de cambios en el intervalo de tiempo(Segundos), se guardara automaticamente una copia de seguridad
