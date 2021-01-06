@@ -37,3 +37,13 @@ En esta parte debera escribir ping, recibiendo como respuesta pong
 127.0.0.1:6397> ping 
 PONG
 ~~~
+si le parace esto ultimo en su terminal, significa que se ha instalado correctamente
+
+#### 1.4.2 Configuracion
+
+Una ves dentro del terminal de redis, el cual puede abrir con :
+~~~
+redis-cli
+~~~
+Podra obtener una lista de todas las configuraciones que puede realizar con el comando `config get *`
+un ejemplo de esto es 
