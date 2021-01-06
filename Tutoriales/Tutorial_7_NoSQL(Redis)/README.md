@@ -189,4 +189,4 @@ para eliminar el hash
 del nombre_hash_set 
 ~~~
 
-**Si deseamos eliminar todas las entradas de la base de datos podemos ocuapr el comando `flushall`**
+**Si deseamos eliminar todas las entradas de la base de datos podemos ocuapr el comando `flushall`**.
