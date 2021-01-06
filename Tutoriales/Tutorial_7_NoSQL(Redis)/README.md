@@ -68,3 +68,4 @@ una vez creada la contraseña al intentar obtener un valor con `config get *`, n
 ~~~
 127.0.0.1:6397> auth "password"
 ~~~
+#### 1.4.3 Persistencia de datos
