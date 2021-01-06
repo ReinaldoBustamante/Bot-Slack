@@ -47,3 +47,14 @@ redis-cli
 ~~~
 Podra obtener una lista de todas las configuraciones que puede realizar con el comando `config get *`
 un ejemplo de esto es 
+~~~
+  1) "dbfilename"
+  2) "dump.rdb"
+  3) "requirepass"
+  4) ""
+  5) "masterauth"
+  6) ""
+  .
+  .
+  .
+~~~
