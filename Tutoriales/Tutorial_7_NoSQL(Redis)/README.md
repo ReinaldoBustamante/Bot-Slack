@@ -79,4 +79,18 @@ Esto creara un archivo en el disco duro con el nombre de **dump.rdb**. Ademas ta
 
 Tambien existe el comando **save** pero no es recomendable, ya que si el sistema esta en funcionamiento este comando no permitiria a los clientes acceder a la base de datos.
 
+#### 1.4.4 Ingresar valores a la base de datos
+
+En redis podemos almacenar diferentes tipos de datos. estos son:
+- String
+- Enteros
+- Listas
+- Hashes
+- Sets
+Para almacenar **String y enteros simplemente podemos escribir lo siguiente**:
+~~~
+set nombre_variable 'hola mundo' 
+set nombre_variable 1 
+~~~
+La variable string se caracteriza por llevar comillas, por otro lado las variables INT no
 
