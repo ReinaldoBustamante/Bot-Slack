@@ -246,4 +246,6 @@ func main() {
 }
 ~~~
 #### 2.6 Ejercicios
-* S
+* Cree un programa que acepte como entrada un numero del 1 al 7, este devolvera si su numero es de la suerte o no (7 es el numero de la suerte), si no devolvera 'mala suerte'
+
+* Cree un programa que calcule la serie de fibonacci
