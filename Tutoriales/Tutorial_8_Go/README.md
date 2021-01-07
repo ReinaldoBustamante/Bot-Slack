@@ -139,12 +139,111 @@ Es importante mencionar que para este lenguaje igual se pueden ocupar `a++` par 
 ^ // xor
 ~~~
 #### 2.4 Estructura de control
+Comenzaremos por el **if** :
+~~~
+package main
+
+import "fmt"
+
+func main() {
+
+    validador := true
+
+    if validador {
+        fmt.Println("Es verdadero")
+    }
+}
+~~~
+Este validador permite que solo se ejecute la linea que este dentro si la condicion es verdadera, pero ¿Como hacer que ejecute una linea si la primera no se ejecuta?.
+~~~
+package main
+
+import "fmt"
+
+func main() {
+
+    validador := true
+
+    if validador {
+      fmt.Println("Es verdadero")
+    } else {
+      fmt.println("Es falso")  
+    }
+}
+~~~
+Efectivamente, para ese caso se ocupara **else**, Tambien es importante mencionar que el else debe ir despues del if. Ahora si necesitamos comprobar mas de un condicion podemos ocupar else **if**.
+~~~
+package main
+
+import "fmt"
+
+func main() {
+
+    numero := 100
+
+    if numero>50  {
+      fmt.Println("Usted posee un numero alto")
+    } else if numero < 50 {
+      fmt.println("usted posee un numero bajo")  
+    } else{
+      fmt.println("Usted esta en la mitad")
+    }
+}
+~~~
+
+
+Otra estructura de control utilizada es **Switch**
+~~~
+package main
+
+import "fmt"
+
+func main() {
+
+    numero := 18
+    switch {
+    case numero > 50:
+        fmt.Println("Usted posee un numero alto")
+    case numero < 50:
+        fmt.Println("Usted posee un numero bajo")
+    default:
+        fmt.Println("Usted esta en la mitad")
+    }
+}
+~~~
 
 #### 2.5 Estructuras iterativas
+Una de las diferencias notables de go, es que este lenguaje no tiene ciclo while, solo usa for. por otro lado esta sentencia es muy flexible. esto se vera a contiuacion.
 
-##### 2.5.1 Ciclo for
+Comenzaremos por el ciclo **for basico**
+~~~
+package main
 
-##### 2.5.1 Ciclo while
+import "fmt"
 
+func main() {
+    var i = 0
+
+    for i < 10 {
+        fmt.Println(i)
+        i++
+    }
+}
+~~~
+otro estilo de for es **for estilo while**
+~~~
+package main
+
+import "fmt"
+
+func main() {
+    var i = 0
+
+    for i < 10 {
+        fmt.Println(i)
+        i++
+    }
+}
+~~~
 #### 2.6 Ejercicios
-
+* S
