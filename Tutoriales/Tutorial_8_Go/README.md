@@ -228,6 +228,7 @@ func main() {
     }
 
 }
+~~~
 otro estilo de for es **for estilo while**
 ~~~
 package main
