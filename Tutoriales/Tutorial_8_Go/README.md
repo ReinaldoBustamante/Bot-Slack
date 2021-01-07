@@ -48,7 +48,7 @@ func main() {
   fmt.Printf("se recibio el siguiente dato, %s Gracias)
 }
 ~~~
-podemos ver que para imprimir el resultado nos resulta conveniente utilizar Printf ya que con (%s) podemos insertar el texto en cualquier posicion del output. Tambien al crear una variable en esta caso `dato` no es necesario colocar a que tipo de dato pertenece, basta con solo indicar que es una variable utilizando `var` antes del nombre de la variable
+podemos ver que para imprimir el resultado nos resulta conveniente utilizar Printf ya que con (%s) podemos insertar el texto en cualquier posicion del output. Tambien al crear una variable en esta caso `dato` no es necesario colocar a que tipo de dato pertenece, basta con solo indicar que es una variable utilizando `var` antes del nombre de la variable o con := despues del nombre de la variable. 
 
 #### 2.2 Arreglos y Slice
 podemos definir arreglos de 2 formas diferentes. la primera forma es:
@@ -84,9 +84,46 @@ func main() {
 
 ~~~
 
-
 #### 2.3 Operaciones
+Para realizar operaciones en go podemos recurrier a lo siguiente:
+~~~
+// Suma
+a := 1
+b := 2
+a + b = 3
 
+// Resta
+a := 1
+b := 2
+a - b = -1
+
+// division
+a := 1
+b := 2
+a/b = 0 // esto devuelve solo la parte entera
+4/2 = 2
+5/2 = 2
+// para especificar que lo devuelva en decimal debemos colocar un punto al final de los valores de a y b para indicar que es de tipo flotante
+
+//multiplicacion
+
+a := 1
+b := 2
+a*b = 2
+
+//resto de una division
+a := 1
+b := 2
+a%b = 1
+
+//identidad de a
+a := 1
+a+ (resultado 1)
+
+//cambio de signo
+a := 1
+a- (resultado -1)
+~~~
 #### 2.4 Estructura de control
 
 #### 2.5 Estructuras iterativas
