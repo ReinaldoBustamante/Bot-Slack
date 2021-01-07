@@ -85,7 +85,7 @@ func main() {
 ~~~
 
 #### 2.3 Operaciones
-Para realizar operaciones en go podemos recurrier a lo siguiente:
+**Operadores aritmeticos :**
 ~~~
 // Suma
 a := 1
@@ -123,6 +123,20 @@ a+ (resultado 1)
 //cambio de signo
 a := 1
 a- (resultado -1)
+~~~
+Es importante mencionar que para este lenguaje igual se pueden ocupar `a++` par agregar 1 valor a la variable. ademas de ocupar `a +=1`
+
+**Operadores Logicos :**
+~~~
+== // sirve para comparar 2 elementos, si son iguales devuelve True si no False
+!= // sirve para comparar 2 elementos, si son distintos devuelve True si no False
+> // sirve para evaluar si un numero es mayor que el otro, si es mayor devuelve True si no False
+< // menor que
+>= // mayor igual que
+<= // menor igual que
+& // and
+| // or
+^ // xor
 ~~~
 #### 2.4 Estructura de control
 
