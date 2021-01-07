@@ -45,6 +45,23 @@ func main() {
   var dato = ""
   fmt.Scanln(&dato)
   fmt.Println("input recibido.")
-  fmt.Println("se recibio", dato)
+  fmt.Printf("se recibio el siguiente dato, %s Gracias)
 }
 ~~~
+podemos ver que para imprimir el resultado nos resulta conveniente utilizar Printf ya que con (%s) podemos insertar el texto en cualquier posicion del output.
+
+#### 2.2 Arreglos y Slice
+
+
+#### 2.3 Operaciones
+
+#### 2.4 Estructura de control
+
+#### 2.5 Estructuras iterativas
+
+##### 2.5.1 Ciclo for
+
+##### 2.5.1 Ciclo while
+
+#### 2.6 Ejercicios
+
