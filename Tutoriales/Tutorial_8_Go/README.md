@@ -48,7 +48,7 @@ func main() {
   fmt.Printf("se recibio el siguiente dato, %s Gracias)
 }
 ~~~
-podemos ver que para imprimir el resultado nos resulta conveniente utilizar Printf ya que con (%s) podemos insertar el texto en cualquier posicion del output. Tambien al crear una variable en esta caso `dato` no es necesario colocar a que tipo de dato pertenece, basta con solo indicar que es una variable con `var`.
+podemos ver que para imprimir el resultado nos resulta conveniente utilizar Printf ya que con (%s) podemos insertar el texto en cualquier posicion del output. Tambien al crear una variable en esta caso `dato` no es necesario colocar a que tipo de dato pertenece, basta con solo indicar que es una variable utilizando `var` antes del nombre de la variable
 
 #### 2.2 Arreglos y Slice
 
