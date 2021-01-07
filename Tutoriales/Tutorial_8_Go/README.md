@@ -1,18 +1,16 @@
-# Tutoriales 8 Go
+  # Tutoriales 8 Go
 
 ## 1. ¿Que es Go?
 Go es un lenguaje de programación concurrente y compilado, desarrollado por Google. Además, Go es de tipado estático, pero tiene partes del tipado dinámico, es decir se pueden declarar variables sin indicar de que tipo es, ya que el compilador interpretara que tipo de dato es. por otro lado ya no te permitira cambiar el tipo de dato. 
 
 ## 2. Instalacion
-Para instalar go primero debemos descargar su archivo de instalacion. Para ello abra su terminal de linux y escriba lo siguiente.
+Para instalar go ocuparemos snap. Para ello abra su terminal de linux y escriba lo siguiente .
 ~~~
-curl -O https://dl.google.com/go/go1.15.6.linux-amd64.tar.gz
+sudo apt install snapd
 ~~~
 luego haga lo siguiente:
 ~~~
-sudo tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
-export PATH=$PATH:/usr/local/go/bin
-go version
+sudo snap install go --classic
 ~~~
 ### 2. ¿Como Utilizar?
 para mostrar la sintaxis de go se creara el primer programa que todos siempre hemos creamos, el conocido 'hello world!'.
@@ -33,3 +31,20 @@ para ejecutar el codigo simplemente escriba lo siguiente:
 go run hello.go
 ~~~
 podemos ver que 'go' sirve para compilar la aplicacion, por otro lado 'run' sirve para ejecutar la aplicacion
+
+#### 2.1 Input y Output
+para realizar input en go se ocupa la siguiente funcion `fmt.Scanln` la cual nos servira para decirle a la computadora que espere un input. esta se ve con mas detalles a
+continuacion
+~~~
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("Esperando a que ingrese algo.")
+  var dato = ""
+  fmt.Scanln(&dato)
+  fmt.Println("input recibido.")
+  fmt.Println("se recibio", dato)
+}
+~~~
