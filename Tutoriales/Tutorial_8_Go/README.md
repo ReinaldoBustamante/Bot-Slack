@@ -51,6 +51,38 @@ func main() {
 podemos ver que para imprimir el resultado nos resulta conveniente utilizar Printf ya que con (%s) podemos insertar el texto en cualquier posicion del output. Tambien al crear una variable en esta caso `dato` no es necesario colocar a que tipo de dato pertenece, basta con solo indicar que es una variable utilizando `var` antes del nombre de la variable
 
 #### 2.2 Arreglos y Slice
+podemos definir arreglos de 2 formas diferentes. la primera forma es:
+~~~
+var array [3]string
+array[0] = "123"
+array[1] = "asd"
+array[2] = "azsx"
+~~~
+nos damos cuenta de que para definir un arreglo es necesario definir el tipo de datos que tendra este. ademas de que los indices de los arreglos siempre parten en 0.
+la otra manera de definir un arreglo es la siguiente.
+~~~
+array := [5]string{"123", "asd", "azsx"}
+~~~
+nos damos cuenta de que la ultima es mas practica ya que no se estaria escribiendo muchas lineas de codigo.
+
+Es importante mencionar que al crear un arreglo de x elementos tipo entero, este creara un arreglo de dimension x cuyos elementos seran puros 0. Para el caso de un arreglo de tipo string, este creara un arreglo cuyos elementos seran ''. 
+
+Para realizar operaciones sobre los arreglo es importante conocer el tamaño de este. para ello existen 2 funciones importantes, `len(array)` y `cap(array)`
+
+Una herramienta muy util para trabajar con arreglo son los **Slice**. Estos nos serviran para poder recuperar un fragmento del arreglo de manera rapida y eficiente.
+por ejemplo 
+~~~
+package main
+import "fmt"
+func main() {
+  numeros := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+  fmt.Println(numeros) // esto nos imprimira el arreglo creado anteriormente
+  fmt.Println(numeros[0:3]) // esto nos imprimira el arreglo desde la posicion 0 hasta la 3 (sin incluirla) -> [1,2,3]
+  fmt.Println(numeros[:3]) // esto nos imprimira el arreglo desde la posicion 0 hasta la 3 (sin incluirla) -> [1,2,3]
+  fmt.Println(numeros[3:]) // esto nos imprimira el arreglo desde la posicion 3 hasta la ultima (incluida) -> [4,5,6,7,8,9,10]
+}
+
+~~~
 
 
 #### 2.3 Operaciones
