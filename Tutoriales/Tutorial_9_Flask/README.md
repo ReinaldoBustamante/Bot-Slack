@@ -95,4 +95,4 @@ if __name__ == "__main__":
 ~~~
 podemos darnos cuenta de que para poder renderizar el archivo html en nuestro archivo python debemos importar render_template, la cual se debera usar al retornar el metodo asociado a la ruta. tambien podemos pasarle datos desde el archivo python al archivo html agregando como hiperparametro este dato a la funcion render_template. para luego ser usado en el archivo html con ``{{dato}}``
 
-Por ultimo en la carpeta static se guardaran los archivos tipo .css o .js.
+Por ultimo en la carpeta static se guardaran los archivos tipo .css o .js y estos se implementaran en el archivo html de la misma manera que siempre.
