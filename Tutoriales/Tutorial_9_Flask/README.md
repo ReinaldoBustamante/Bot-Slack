@@ -64,7 +64,7 @@ si ejecuta este codigo en su computador se podra dar cuenta que al colocar `127.
 ## 3. Renderizado de una pagina HTML en flask
 Como se menciono anteriormente, la estructura de un proyecto flask se compone por 2 partes, static y templates. por lo que en su proyecto slack debera crear estas 2 carpetas al nivel de su archivo.py. en la carpeta templates deberan estar los archivos .html
 
-### 3.1 Creando nuestro primer archivo html
+### Creando nuestro primer archivo html
 ~~~
 <!DOCTYPE html>
 <html lang="es">
