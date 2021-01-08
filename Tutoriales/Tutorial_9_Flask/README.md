@@ -23,4 +23,4 @@ Para realizar su instalacion simplemente ocuparemos pip.
 sudo pip install Flask
 ~~~
 
-## 1.1 Primer programa
+## 1. Primer programa
