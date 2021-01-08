@@ -62,4 +62,35 @@ if __name__ == "__main__":
 si ejecuta este codigo en su computador se podra dar cuenta que al colocar `127.0.0.1:5000/ruta1` , usted accedera a la ruta deseada con sus metodos correspondientes.
 
 ## 3. Renderizado de una pagina HTML en flask
-Como se menciono anteriormente, la estructura de un proyecto flask se compone por 2 partes, static y templates. por lo que en su proyecto slack debera crear estas 2 carpetas al nivel de su archivo.py. en la carpeta templates deberan estar los archivos html.   
+Como se menciono anteriormente, la estructura de un proyecto flask se compone por 2 partes, static y templates. por lo que en su proyecto slack debera crear estas 2 carpetas al nivel de su archivo.py. en la carpeta templates deberan estar los archivos .html
+
+### 3.1 Creando nuestro primer archivo html
+~~~
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial_9_flask</title>
+</head>
+<body>
+    {{ suma }}
+</body>
+</html>
+~~~
+como se dijo anteriormente este archivo debe estar en la carpeta templates. ahora debemos modificar el archivo python para renderizar el html.
+
+**ahora en app.py **
+~~~
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    numero_1 = 4
+    numero_2 = 6
+    suma = numero_1 + numero_2
+    return render_template('index.html', suma=suma)
+if __name__ == "__main__":
+    app.run()
+~~~
+podemos darnos cuenta de que para poder renderizar el archivo html en nuestro archivo python debemos importar render_template, la cual se debera usar al retornar el metodo asociado a la ruta. tambien podemos pasarle datos desde el archivo python al archivo html agregando como hiperparametro este dato a la funcion render_template. para luego ser usado en el archivo html con ``{{dato}}``
