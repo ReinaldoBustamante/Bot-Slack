@@ -18,3 +18,7 @@ son herramientas que nos dan un esquema de trabajo y una serie de utilidades y f
 * muy sencillo de utilizar
 
 ## Instalacion
+Para realizar su instalacion simplemente ocuparemos pip.
+~~~
+sudo pip install Flask
+~~~
